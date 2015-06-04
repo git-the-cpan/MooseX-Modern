@@ -31,4 +31,4 @@ requires:
 resources:
   bugtracker: https://github.com/aanari/MooseX-Modern/issues
   repository: git://github.com/aanari/MooseX-Modern.git
-version: '0.0100'
+version: '0.0101'

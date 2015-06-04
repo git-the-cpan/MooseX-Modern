@@ -1,5 +1,5 @@
 package MooseX::Modern;
-$MooseX::Modern::VERSION = '0.0100';
+$MooseX::Modern::VERSION = '0.0101';
 use Moose                         ();
 use Moose::Exporter;
 use Moose::Util::TypeConstraints  ();
@@ -25,6 +25,8 @@ sub init_meta {
 
 1;
 
+# ABSTRACT: Precision classes for Modern Perl
+
 __END__
 
 =pod
@@ -33,11 +35,11 @@ __END__
 
 =head1 NAME
 
-MooseX::Modern
+MooseX::Modern - Precision classes for Modern Perl
 
 =head1 VERSION
 
-version 0.0100
+version 0.0101
 
 =head1 SYNOPSIS
 
