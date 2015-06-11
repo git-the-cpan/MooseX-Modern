@@ -28,6 +28,7 @@
          "requires" : {
             "Moose" : "0",
             "Moose::Exporter" : "0",
+            "Moose::Role" : "0",
             "Moose::Util::TypeConstraints" : "0",
             "MooseX::AttributeShortcuts" : "0",
             "MooseX::HasDefaults::RO" : "0",
@@ -59,6 +60,6 @@
          "web" : "https://github.com/aanari/MooseX-Modern"
       }
    },
-   "version" : "0.0101"
+   "version" : "0.0200"
 }
 

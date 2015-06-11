@@ -1,6 +1,6 @@
-package MooseX::Modern;
-$MooseX::Modern::VERSION = '0.0200';
-use Moose                         ();
+package MooseX::Modern::Role;
+$MooseX::Modern::Role::VERSION = '0.0200';
+use Moose::Role                   ();
 use Moose::Exporter;
 use Moose::Util::TypeConstraints  ();
 use MooseX::AttributeShortcuts    ();
@@ -8,24 +8,25 @@ use MooseX::HasDefaults::RO       ();
 
 use namespace::autoclean          ();
 
-Moose::Exporter->setup_import_methods(also => ['Moose']);
+Moose::Exporter->setup_import_methods(also => ['Moose::Role']);
 
 sub init_meta {
     my $class  = shift;
+    my $caller = scalar caller();
     my %params = @_;
     my $for_class = $params{for_class};
 
-    Moose->init_meta(@_);
+    Moose::Role->init_meta(@_);
     Moose::Util::TypeConstraints->import({ into => $for_class });
     MooseX::AttributeShortcuts->init_meta(@_);
-    MooseX::HasDefaults::RO->import({ into => $for_class });
+    MooseX::HasDefaults::RO->import({ into => $caller });
 
     namespace::autoclean->import( -cleanee => $for_class );
 }
 
 1;
 
-# ABSTRACT: Precision classes for Modern Perl
+# ABSTRACT: Precision roles for Modern Perl
 
 __END__
 
@@ -35,7 +36,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Modern - Precision classes for Modern Perl
+MooseX::Modern::Role - Precision roles for Modern Perl
 
 =head1 VERSION
 
@@ -43,19 +44,19 @@ version 0.0200
 
 =head1 SYNOPSIS
 
-    use MooseX::Modern;
+    use MooseX::Modern::Role;
 
-    # Your class here
+    # Your role here
 
 =head1 DESCRIPTION
 
-MooseX::Modern provides the best practices of L<Moose> in a single, user-friendly import.
+MooseX::Modern::Role provides the best practices of L<Moose::Role> in a single, user-friendly import.
 
 The following modules will be automatically loaded into your class:
 
 =over
 
-=item L<Moose> – Postmodern object system
+=item L<Moose::Role> – Postmodern object system for roles
 
 =item L<Moose::Util::TypeConstraints> – Type constraint system
 

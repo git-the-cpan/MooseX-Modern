@@ -24,6 +24,7 @@ name: MooseX-Modern
 requires:
   Moose: '0'
   Moose::Exporter: '0'
+  Moose::Role: '0'
   Moose::Util::TypeConstraints: '0'
   MooseX::AttributeShortcuts: '0'
   MooseX::HasDefaults::RO: '0'
@@ -31,4 +32,4 @@ requires:
 resources:
   bugtracker: https://github.com/aanari/MooseX-Modern/issues
   repository: git://github.com/aanari/MooseX-Modern.git
-version: '0.0101'
+version: '0.0200'
